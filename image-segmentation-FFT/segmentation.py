@@ -1,4 +1,3 @@
-'''------------------Carlos Eduardo Cujcuj------------------'''
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
@@ -105,21 +104,21 @@ def labelview(labels):
 
     """
 
-    #Colores en RGB
+    #cores en RGB
     #pallete 1
-    #colores = [[69, 245, 10], [224, 27, 109], [17, 237, 200], [17, 21, 237], [89, 13, 219], [227, 242, 12]]
+    #cores = [[69, 245, 10], [224, 27, 109], [17, 237, 200], [17, 21, 237], [89, 13, 219], [227, 242, 12]]
 
     #pallete 2
-    colores = [[105,105,105], [128,128,128], [169,169,169], [192,192,192], [211,211,211], [28,28,28], [79,79,79], [54,54,54]]
+    cores = [[105,105,105], [128,128,128], [169,169,169], [192,192,192], [211,211,211], [28,28,28], [79,79,79], [54,54,54]]
 
     #pallete 3
-    #colores = [[209, 25, 69], [181, 40, 111], [136, 63, 134], [87, 75, 134], [51, 77, 116], [47, 72, 88]]
+    #cores = [[209, 25, 69], [181, 40, 111], [136, 63, 134], [87, 75, 134], [51, 77, 116], [47, 72, 88]]
 
     #pallete 4
-    #colores = [[228, 242, 10], [115, 220, 88], [0, 187, 130], [0, 149, 145], [0, 110, 129], [47, 72, 88], [72, 55, 102]]
+    #cores = [[228, 242, 10], [115, 220, 88], [0, 187, 130], [0, 149, 145], [0, 110, 129], [47, 72, 88], [72, 55, 102]]
 
 
-                                 #fila,       columna,    colores
+                                 #fila,       columna,    cores
     labelColors = np.full((labels.shape[0], labels.shape[1], 3), 0, dtype = int)
     auxColors = [[0,0,0]]
     LabCol = {}
@@ -135,13 +134,13 @@ def labelview(labels):
                     labelColors[row][col] = LabCol[ str(labels[row, col]) ]
 
                 else:
-                    if cont == len(colores)-1:
+                    if cont == len(cores)-1:
                         cont = 0
                     else:
                         cont += 1
 
-                    LabCol[ str(labels[row, col]) ] = colores[cont]
-                    labelColors[row][col] = colores[cont]
+                    LabCol[ str(labels[row, col]) ] = cores[cont]
+                    labelColors[row][col] = cores[cont]
 
     return labelColors
 
